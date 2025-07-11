@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math API Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 Math API Calculator</h1>
+        <p class="subtitle">Easy-to-use geometric calculator with a friendly interface!</p>
+
+        <!-- Circle Calculations -->
+        <div class="calculator-section">
+            <h3>🔵 Circle Calculations</h3>
+            
+            <div class="input-group">
+                <label for="circle-radius">Radius:</label>
+                <input type="number" id="circle-radius" placeholder="Enter radius (e.g., 5)" step="0.01" min="0">
+            </div>
+            
+            <div class="two-column">
+                <button onclick="calculateCirclePerimeter()">Calculate Perimeter</button>
+                <button onclick="calculateCircleArea()">Calculate Area</button>
+            </div>
+            
+            <div id="circle-result" class="result"></div>
+            <div id="circle-error" class="error"></div>
+        </div>
+
+        <!-- Rectangle Calculations -->
+        <div class="calculator-section">
+            <h3>📐 Rectangle Calculations</h3>
+            
+            <div class="two-column">
+                <div class="input-group">
+                    <label for="rect-width">Width:</label>
+                    <input type="number" id="rect-width" placeholder="Enter width (e.g., 4)" step="0.01" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="rect-height">Height:</label>
+                    <input type="number" id="rect-height" placeholder="Enter height (e.g., 6)" step="0.01" min="0">
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <button onclick="calculateRectanglePerimeter()">Calculate Perimeter</button>
+                <button onclick="calculateRectangleArea()">Calculate Area</button>
+            </div>
+            
+            <div id="rectangle-result" class="result"></div>
+            <div id="rectangle-error" class="error"></div>
+        </div>
+
+        <!-- Triangle Calculations -->
+        <div class="calculator-section">
+            <h3>📐 Triangle Area</h3>
+            
+            <div class="two-column">
+                <div class="input-group">
+                    <label for="triangle-base">Base:</label>
+                    <input type="number" id="triangle-base" placeholder="Enter base (e.g., 10)" step="0.01" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="triangle-height">Height:</label>
+                    <input type="number" id="triangle-height" placeholder="Enter height (e.g., 8)" step="0.01" min="0">
+                </div>
+            </div>
+            
+            <button onclick="calculateTriangleArea()">Calculate Area</button>
+            
+            <div id="triangle-result" class="result"></div>
+            <div id="triangle-error" class="error"></div>
+        </div>
+
+        <!-- API Info -->
+        <div class="calculator-section">
+            <h3>🔧 API Information</h3>
+            <p><strong>Server Status:</strong> <span id="server-status">Checking...</span></p>
+            <p><strong>API Endpoints:</strong> This interface uses the REST API endpoints in the background.</p>
+            <button onclick="checkHealth()">Check Server Health</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
